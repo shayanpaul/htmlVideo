@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>First Name</title>
+<style type="text/css">
+  :invalid {
+    background-color: #ffdddd;
+  }
+  :valid {
+    background-color: #ddffdd;
+  }
+  :required {
+    border-color: #800000;
+    border-width: 3px;
+  }
+</style>
+</head>
+
+<body>
+<form action="" method="post">
+	<label id="Label1" for="FirstName">First Name:</label><br />
+	<input name="FirstName" type="text" required autofocus/> <label id="Label2" for="LastName"><br />
+		<br />
+		Last Name:<br />
+	</label><input name="LastName" type="text" required/>
+<br />
+	<br />
+	Email Address:<br />
+	<input name="Text3" type="email" placeholder="name@domain.com"/><br />
+	<br />
+	Age:<br />
+	<input name="Text2" type="number" step="1" min="18"/><br />
+	<br>Birthdate:<br><input name="Text4" type="date"><br><br>Department:<br>
+	<input name="Text5" type="text" list="departments">
+	<datalist id="departments">
+		<option value="Accounting"></option>
+		<option value="Engineering"></option>
+		<option value="Human Resources"></option>
+		<option value="Sales"></option>
+		<option value="Support"></option>
+	</datalist>
+	<br><br>Gender:<br />
+	<input checked="checked" name="Radio1" type="radio" />M
+	<input name="Radio1" type="radio" /> F<br />
+	<br />
+	Check if US Citizen: <input name="Checkbox1" type="checkbox"/><br />
+	<br />
+	<input name="Submit1" type="submit" value="submit" /> <input name="Reset1" type="reset" value="reset" />
+	</form>
+
+</body>
+
+</html>

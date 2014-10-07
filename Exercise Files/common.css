@@ -1,0 +1,15 @@
+﻿/* Common CSS for the HTML5 Forms Demos */
+
+.highlight {
+	background-color: #FFFF00;
+}
+
+body {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12pt;
+}
+
+label {
+	font-weight: bold;
+}
+

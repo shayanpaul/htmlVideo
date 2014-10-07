@@ -1,0 +1,265 @@
+﻿Chapter 2
+
+	autocomplete
+
+<p><label for="Text1">Field 1: </label><input name="Text1" type="text" id="Text1" autocomplete="on" /></p>
+<p><label for="Text2">Field 2: </label><input name="Text2" type="text" id="Text2" autocomplete="off" /></p>
+<p><label for="Text3">Field 3: </label><input name="Text3" type="text" id="Text3" autocomplete="off" /></p>
+
+	autofocus
+
+<script type="text/javascript" src="../modernizr-1.7.js"></script>
+<script type="text/javascript" src="../jquery-1.5.1.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (!Modernizr.input.autofocus) {
+      $("input[autofocus]").focus(); // give focus to whichever element has the autofocus attribute
+    }
+  });
+</script>
+
+<p><label for="Text1">Field 1: </label><input name="Text1" type="text" id="Text1" autofocus /></p>
+
+	novalidate
+
+	<form action="" method="post" novalidate>
+
+		<p><input name="Save" type="button" value="save" formnovalidate>&nbsp;</p>
+
+
+	pattern
+
+<script type="text/javascript" src="../webforms2-0.5.4/webforms2.js"></script>
+
+<p><label for="Text1">Zip Code: </label><input name="Text1" type="text" id="Text1" pattern="^[0-9]{5}$"/></p>
+
+	placeholder
+
+<script type="text/javascript" src="../modernizr-1.7.js"></script>
+<script type="text/javascript" src="../jquery-1.5.1.js"></script>
+<script type="text/javascript" src="../placeholder.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (!Modernizr.input.placeholder) {
+            makePlaceholders();
+        }
+    });
+</script>
+
+<p><label for="Text1">Field 1: </label><input name="Text1" type="text" id="Text1" placeholder="Placeholder Text 1"/></p>
+<p><label for="Text2">Field 2: </label><input name="Text2" type="email" id="Text2" placeholder="Placeholder Text 2"/></p>
+<p><label for="Text3">Field 3: </label><input name="Text3" type="url" id="Text3" placeholder="Placeholder Text 3"/></p>
+
+
+	required
+
+<!-- The webforms2 library gives us the "required" attribute support" -->
+<script type="text/javascript" src="../webforms2-0.5.4/webforms2.js"></script>
+
+		<p><label for="Text1" >First Name: </label><input name="Text1" type="text" required></p>
+
+
+	selection
+
+<script type="text/javascript">
+    function SelectSomeText () {
+        var input = document.getElementById ("Textbox");
+            input.selectionStart = parseInt(document.getElementById('Start').value);
+            input.selectionEnd = parseInt(document.getElementById('End').value);                
+    }
+    function SelectSomeText2 () {
+        var input = document.getElementById ("Textbox");
+        var start = parseInt(document.getElementById('Start').value);
+        var end = parseInt(document.getElementById('End').value);
+        	input.setSelectionRange(start, end);
+    }
+    function ShowSelection() {
+        var input = document.getElementById ("Textbox");
+        alert("Start: " + input.selectionStart + " End: " + input.selectionEnd );
+    }
+</script>
+
+    <p><button onclick="SelectSomeText ()">Select Text Using Properties</button></p>
+    <p><button onclick="SelectSomeText2 ()">Select Text Using setSelectionRange()</button></p>
+    <p><button onclick="ShowSelection()">Display Current Selection offsets</button></p>
+
+	Styling
+
+<style type="text/css">
+  :invalid {
+    background-color: #ffdddd;
+  }
+  :valid {
+    background-color: #ddffdd;
+  }
+  :required {
+    border-color: #800000;
+    border-width: 3px;
+  }
+</style>
+
+<script type="text/javascript" src="../jquery-1.5.1.js"></script>
+<script>
+	$("document").ready(function() {
+		$("input[required]").css("border", "3px solid #800000");
+	});
+</script>
+
+Chapter 3
+
+	Search type
+
+<input name="Text1" type="search" />
+
+	Email type
+
+<script type="text/javascript" src="../webforms2-0.5.4/webforms2.js"></script>
+<p><label>Email Text Field:</label><input name="Text2" type="email" /></p>
+
+	URL type
+
+<script type="text/javascript" src="../webforms2-0.5.4/webforms2.js"></script>
+<p><label>URL Text Field:</label><input name="Text2" type="url" /></p>
+
+	Tel Field
+
+<p><label>Telephone Field:</label><input name="Text2" type="tel" /></p>
+
+	Number
+
+<script type="text/javascript" src="../webforms2-0.5.4/webforms2.js"></script>
+
+<p><label>Number Field:</label><input name="Text2" type="number" value="5"/></p>
+<p><label>Number Field (Min and Max):</label><input name="Text3" type="number" min="2" max="12" value="5"/></p>
+<p><label>Number Field (Step):</label><input name="Text4" type="number" value="5" step="5"/></p>
+<p><label>Number Field (Min, Max, and Step):</label><input name="Text5" type="number" min="2" max="12" step="2" value="6"/></p>
+<p><label>Number Field (Fractions, Min, Max, and Step):</label><input name="Text5" type="number" min="0.0" max="2.0" step="0.2" value="0.8"/></p>
+
+	Range
+
+<p><label>Number Field:</label><input name="Text2" type="range" value="5"/></p>
+<p><label>Number Field (Min and Max):</label><input name="Text3" type="range" min="0" max="120" value="5"/></p>
+<p><label>Number Field (Step):</label><input name="Text4" type="range" value="5" step="5"/></p>
+<p><label>Number Field (Min, Max, and Step):</label><input name="Text5" type="range" min="2" max="12" step="2" value="6"/></p>
+<p><label>Number Field (Fractions, Min, Max, and Step):</label><input name="Text5" type="range" min="0.0" max="2.0" step="0.2" value="0.8"/></p>
+
+	Date/Time
+
+<p><label>Time Field:</label><input type="time" value="01:30" step="3600"></p>
+<p><label>Date Field:</label><input type="date" value="2011-12-22"></p>
+<p><label>DateTime Field:</label><input type="datetime" value="2011-12-22T01:30Z"></p>
+<p><label>Local DateTime Field:</label><input type="datetime-local" value="2011-12-22T01:30"></p>
+<p><label>Week Field:</label><input type="week" value="2011-W11"></p>
+<p><label>Month Field:</label><input type="month" value="2011-07"></p>
+<p><label>Month Field (Min, Max):</label><input type="month" value="2011-07" min="2011-01" max="2011-12"></p>
+
+	Color
+
+<input name="Text1" type="color" />
+
+Chapter 4
+
+	datalist
+
+	<label id="Label1" for="Text5">Input Field With Suggestions: </label><input name="Text5" type="text" list="suggestions">
+
+	<datalist id="suggestions">
+	  <option value="Suggestion Value 1"></option>
+	  <option value="Suggestion Value 2"></option>
+	  <option value="Suggestion Value 3"></option>
+	  <option value="Suggestion Value 4"></option>
+	  <option value="Clyde"></option>
+	</datalist>
+
+
+	progress
+
+<p>Progress: <progress value="50.0" max="100.0">50%</progress></p>
+
+	meter
+
+<p>Current storage space usage: <meter value="30.0" min="0.0" max="100.0" low="20.0" high="80.0" optimum="40.0">300MB out of 1GB used</meter></p>
+
+	output
+
+<script type="text/javascript">
+    function calculation() {
+        var o = document.getElementById("result");
+        var num1 = document.getElementById("num1");
+        var num2 = document.getElementById("num2");
+
+        o.value = parseFloat(num1.value) + parseFloat(num2.value);
+    }
+</script>
+
+<p>Results: <output name="result" id="result"></output></p>
+<p><button onclick="calculation()">Perform Calculation</button></p>
+
+
+Chapter 5
+
+	Mobile Forms
+
+<p><label>Search Input Field:</label><input name="Text1" type="search" autofocus /></p>
+<p><label>Numeric Input Field:</label><input name="Num1" type="number" min="0" max="20" step="1" /></p>
+<p><label>Email Input Field:</label><input name="Email1" type="email" /></p>
+<p><label>URL Input Field:</label><input name="URL1" type="url" required /></p>
+<p><label>Tel Input Field:</label><input name="tel1" type="tel" /></p>
+
+	Explore CA
+
+<!-- add the script for the webforms2 support -->
+<script type="text/javascript" src="../../webforms2-0.5.4/webforms2.js"></script>
+<!-- add the script and styles for the spinner control -->
+<link rel="Stylesheet" type="text/css" href="../../numeric_spinner/ui.spinner.css" />
+<script type="text/javascript" src="../../numeric_spinner/ui.spinner.js"></script>
+<script type="text/javascript" src="../../modernizr-1.7.js"></script>
+<script src="../../placeholder.js"></script>
+
+<script type="text/javascript">
+    $("document").ready(function () {
+        if (!Modernizr.input.placeholder) {
+            makePlaceholders();
+        }
+
+        if (!Modernizr.inputtypes.number) {
+            var $numerics = $("input[type=number]");
+            $numerics.each(function () {
+                var thisNum = $(this);
+                thisNum.spinner({
+                    min: thisNum.attr("min"),
+                    max: thisNum.attr("max"),
+                    step: thisNum.attr("step")
+                });
+            });
+        }
+
+        if (!Modernizr.inputtypes.date) {
+            var $dates = $("input[type=date]");
+            $dates.each(function () {
+                var thisDate = $(this);
+                thisDate.datepicker({
+                    minDate: thisDate.attr("min"),
+                    maxDate: thisDate.attr("max"),
+                    dateFormat: "yy-mm-dd"
+                });
+            });
+        }
+    });
+</script>
+
+              <input name="name" type="text" class="text" id="name" tabindex="100" required autofocus placeholder="First, then last name">
+
+              <input name="email" type="email" class="text" id="email" tabindex="110" placeholder="you@youremailaddress.ext"  required title="Your email address">
+
+              <input name="phone" type="tel" class="text" id="phone" tabindex="130" placeholder="optional phone number" title="Your phone number">
+
+
+              <input name="zip" type="text" class="text" id="zip" tabindex="160" pattern="^[0-9]{5}$" title="Enter a 5 digit ZIP code" required>
+
+
+        <input type="date" name="tripDate" id="tripDate" tabindex="265" title="Enter a date in the form mm/dd/yyyy">
+
+        <input type="number" name="numPersons" id="numPersons" tabindex="265" value="2" min="1" max="6" step="1">
+

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Text Selection APIs</title>
+<link rel="stylesheet" href="../common.css" type="text/css">
+<script type="text/javascript">
+    function SelectSomeText () {
+        var input = document.getElementById ("Textbox");
+            input.selectionStart = parseInt(document.getElementById('Start').value);
+            input.selectionEnd = parseInt(document.getElementById('End').value);                
+    }
+    function SelectSomeText2 () {
+        var input = document.getElementById ("Textbox");
+        var start = parseInt(document.getElementById('Start').value);
+        var end = parseInt(document.getElementById('End').value);
+        	input.setSelectionRange(start, end);
+    }
+    function ShowSelection() {
+        var input = document.getElementById ("Textbox");
+        alert("Start: " + input.selectionStart + " End: " + input.selectionEnd );
+    }
+</script>
+</head>
+<body>
+	<h1>Using the Text Selection APIs</h1>
+	<p>This example shows how to use the Text Selection APIs to select ranges of 
+	text in &lt;input&gt; and &lt;textarea&gt; fields. </p>
+    <p><input type="text" id="Textbox" size="40" value="The text selection appears here"/></p>
+	<p>Use the two fields below to enter the start and end index of the text to 
+	select. Then try using the buttons below to change and view the selection 
+	offsets.</p>
+	<p>Selection Start: <input type="text" id="Start" size="3" value="5"> Selection End: 
+	<input type="text" id="End" size="3" value="15"></p>
+    <p><button onclick="SelectSomeText ()">Select Text Using Properties</button></p>
+    <p><button onclick="SelectSomeText2 ()">Select Text Using setSelectionRange()</button></p>
+    <p><button onclick="ShowSelection()">Display Current Selection offsets</button></p>
+    
+</body>
+</html> 

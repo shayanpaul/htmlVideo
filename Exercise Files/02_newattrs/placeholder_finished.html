@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Using the placeholder attribute</title>
+<link rel="stylesheet" href="../common.css" type="text/css">
+
+<script type="text/javascript" src="../modernizr-1.7.js"></script>
+<script type="text/javascript" src="../jquery-1.5.1.js"></script>
+<script type="text/javascript" src="../placeholder.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (!Modernizr.input.placeholder) {
+            makePlaceholders();
+        }
+    });
+</script>
+</head>
+<body>
+<h1>Using the placeholder Attribute</h1>
+<p>The <code>placeholder</code> attribute displays placeholder text in an input control that 
+suggests to the user the kind of input the control is looking for. The 
+placeholder text displays when the control does not have focus and has no 
+user-supplied input. When the control has focus, the placeholder text 
+disappears. </p>
+ <p>The control in this form uses the placeholder attribute to specify 
+ placeholder text, if the browser supports it. Otherwise, a custom javascript function is used to accomplish the same 
+ effect.</p>
+<form method="get" action="">
+<p><label for="Text1">Field 1: </label><input name="Text1" type="text" id="Text1" placeholder="Placeholder Text 1"/></p>
+<p><label for="Text2">Field 2: </label><input name="Text2" type="email" id="Text2" placeholder="Placeholder Text 2"/></p>
+<p><label for="Text3">Field 3: </label><input name="Text3" type="url" id="Text3" placeholder="Placeholder Text 3"/></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<title>Using the Date Input type</title>
+<link rel="stylesheet" href="../common.css" type="text/css">
+<style type="text/css">
+    label 
+    {
+        display: block;
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+
+<body>
+<h1>Using the Date Input type</h1>
+<p>The Date and Time input fields allow the user to easily select dates and times.</p>
+<p>There are multiple versions of this input type, used for selecting dates, weeks, months, and times.</p>
+<form action="" method="get">
+<p><label>Regular Text Field:</label><input name="Text1" type="text" /></p>
+<p><label>Time Field:</label><input type="time" value="01:30" step="3600"></p>
+<p><label>Date Field:</label><input type="date" value="2011-12-22"></p>
+<p><label>DateTime Field:</label><input type="datetime" value="2011-12-22T01:30Z"></p>
+<p><label>Local DateTime Field:</label><input type="datetime-local" value="2011-12-22T01:30"></p>
+<p><label>Week Field:</label><input type="week" value="2011-W11"></p>
+<p><label>Month Field:</label><input type="month" value="2011-07"></p>
+<p><label>Month Field (Min, Max):</label><input type="month" value="2011-07" min="2011-01" max="2011-12"></p>
+<p><input type="submit" value="submit" /></p>
+</form>
+</body>
+</html>

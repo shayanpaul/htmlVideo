@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Using the autofocus attribute</title>
+<link rel="stylesheet" href="../common.css" type="text/css">
+
+<script type="text/javascript" src="../modernizr-1.7.js"></script>
+<script type="text/javascript" src="../jquery-1.5.1.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (!Modernizr.input.autofocus) {
+      $("input[autofocus]").focus(); // give focus to whichever element has the autofocus attribute
+    }
+  });
+</script>
+</head>
+<body>
+<h1>Using the autofocus Attribute</h1>
+<p>This form has several input fields. On platforms that have native support for <code>autofocus</code>,
+ the input focus is automatically directed to the first form element that has the autofocus attribute.</p>
+ <p>Otherwise, a custom javascript function is used to accomplish the same 
+ effect. Try moving the autofocus attribute around in the source code to see 
+ what happens.</p>
+<form method="get" action="">
+<p><label for="Text1">Field 1: </label><input name="Text1" type="text" id="Text1" autofocus /></p>
+<p><label for="Text2">Field 2: </label><input name="Text2" type="text" id="Text2" /></p>
+<p><label for="Text3">Field 3: </label><input name="Text3" type="text" id="Text3" /></p>
+</form>
+</body>
+</html>
